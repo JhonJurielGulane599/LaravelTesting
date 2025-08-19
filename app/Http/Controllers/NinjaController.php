@@ -16,12 +16,13 @@ class NinjaController extends Controller
 
     public function show($id) {
       // route --> /ninjas/{id}
-      
+      $ninja = Ninja::findOrFail($id);
+      return view('ninjas.show', ["ninja" => $ninja]);
     }
 
     public function create() {
       // route --> /ninjas/create
-      
+      return view('ninjas.create');
     }
 
     public function store() {
